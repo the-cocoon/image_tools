@@ -40,11 +40,11 @@ module ImageTools
   end
 
   def destroy_file file_path
-    FileUtils.rm(file_path , force: true)
+    FileUtils.rm(file_path.compact, force: true)
   end
 
   def destroy_dir_of_file file_path
-    FileUtils.rm_rf path_to_file(file_path)
+    FileUtils.rm_rf path_to_file(file_path.compact)
   end
 
   def destroy_dir dir_path
